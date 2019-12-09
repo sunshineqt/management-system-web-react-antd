@@ -1,10 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
-import CompType from './components/CompType';
-import StateTest from './components/StateTest';
-import CartSample from './components/CartSample';
+// import CompType from './components/CompType';
+// import StateTest from './components/StateTest';
+// import CartSample from './components/CartSample';
+// import CommentList from './components/CommentList';
+import Hoc from './components/Hoc';
+import Composition from './components/Composition';
+
+// 按需导入
+// import { Button } from 'antd';
 
 
 function App() {
@@ -15,9 +21,13 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>*/}
-        <CompType />
-        <StateTest />
-        <CartSample />
+        {/* <CompType /> */}
+        {/* <StateTest /> */}
+        {/* <CartSample /> */}
+        {/* <Button type="primary">测试btn</Button> */}
+        {/* <CommentList /> */}
+        <Hoc name="hoc" />
+        <Composition />
         {/*<a
           className="App-link"
           href="https://reactjs.org"

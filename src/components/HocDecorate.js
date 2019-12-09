@@ -1,0 +1,45 @@
+// 装饰器写法
+import React, { Component } from "react";
+
+// 高阶组件，创建一个函数接收一个组件返回另一个组件
+function withStage(Component) {
+    const NewComponent = props => {
+      return <Component {...props} stage="react" />;
+    };
+    return NewComponent;
+  }
+  
+  // 功能：日志记录
+  function withLog(Component) {
+    console.log(Component.name + "加强了");
+    return props => {
+      return <Component {...props} />;
+    };
+  }
+
+@withLog
+@withStage
+@withLog
+class Kkba extends Component {
+  render() {
+    return (
+      <div>
+        {this.props.stage} - {this.props.name}
+      </div>
+    );
+  }
+}
+
+// const withKkb = (Component) => {
+//     const NewComponent = (props) => {
+//         return <Component {...props} name='高阶组件' />
+//     };
+//     return NewComponent;
+// }
+
+
+
+// 对Kkb进行包装
+// export default withStage(Kkb);
+// export default withLog(withStage(withLog(Kkb)));
+export default Kkba;
