@@ -43,11 +43,21 @@ function FilterP(props){
 }
 
 function RadioGroup(props){
-
+    // 将name属性赋值给所有radio
+    return (
+        // {
+            React.Children.map( props.children, child => React.cloneElement(child, {name: props.name}))
+        // }
+    )
 }
 
 function Radio(props){
-
+    return (
+        <label htmlFor="">
+            <input type="radio" name={props.name} />
+            {props.children}
+        </label>
+    )
 }
 
 /* export default function Composition(){

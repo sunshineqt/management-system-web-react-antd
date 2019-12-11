@@ -6,8 +6,10 @@ import './App.css';
 // import StateTest from './components/StateTest';
 // import CartSample from './components/CartSample';
 // import CommentList from './components/CommentList';
-import Hoc from './components/Hoc';
-import Composition from './components/Composition';
+// import Hoc from './components/Hoc';
+// import Composition from './components/Composition';
+import ContextTest from './components/ContextTest';
+import HookTest from './components/HookTest';
 
 // 按需导入
 // import { Button } from 'antd';
@@ -26,8 +28,10 @@ function App() {
         {/* <CartSample /> */}
         {/* <Button type="primary">测试btn</Button> */}
         {/* <CommentList /> */}
-        <Hoc name="hoc" />
-        <Composition />
+        {/* <Hoc name="hoc" /> */}
+        {/* <Composition /> */}
+        <ContextTest />
+        <HookTest />
         {/*<a
           className="App-link"
           href="https://reactjs.org"
