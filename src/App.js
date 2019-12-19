@@ -1,4 +1,5 @@
 import React from 'react';
+import {Provider} from 'react-redux';
 // import logo from './logo.svg';
 import './App.css';
 
@@ -13,6 +14,10 @@ import HookTest from './components/HookTest';
 
 // 按需导入
 // import { Button } from 'antd';
+
+import store from './store';
+// import {Provider} from 'react-redux';
+
 
 
 function App() {
@@ -30,8 +35,12 @@ function App() {
         {/* <CommentList /> */}
         {/* <Hoc name="hoc" /> */}
         {/* <Composition /> */}
-        <ContextTest />
-        <HookTest />
+        {/* <ContextTest /> */}
+        {/* <HookTest /> */}
+        <Provider store={store}>
+          <HookTest />
+        </Provider>
+
         {/*<a
           className="App-link"
           href="https://reactjs.org"
