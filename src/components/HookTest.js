@@ -148,7 +148,7 @@ function HookTest({fruits, loading, loadingStart, loadingEnd, init, asyncFetch})
         <div>
         {/* exact */}
           <Switch>
-            <Route path="/list" render={() => (
+            <Route path="/list" render={(props) => (
               loading?(<div>数据加载中......</div>):(<FruitList fruits={fruits} setFruit={setFruit} />)
             )}></Route>
             {/* <Route path="/add" component={FruitAdd}></Route> */}
