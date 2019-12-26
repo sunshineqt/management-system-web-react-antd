@@ -1,26 +1,27 @@
-const initialState = {isLogin:false, loading:false};
+const initialState = { isLogin: false, loading: false };
 export default (state = initialState, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'requestLogin':
-            return {sLogin:false, loading:true};
+            return { sLogin: false, loading: true };
         case 'loginSuccess':
-            return {isLogin:true, loading:false};
+            return { isLogin: true, loading: false };
         case 'loginFailure':
-            return {isLogin:false, loading:false};
+            return { isLogin: false, loading: false };
         default:
-            return state;            
+            return state;
     }
 }
 
-export function login(user){
-    return (dispatch,getState) => {
-        dispatch({type:'requestLogin'});
-        setTimeout(() => {
-            if(Date.now() % 2 === 0){
-                dispatch({type:'loginSuccess'});
-            }else{
-                dispatch({type:'loginFailure'})
-            }
-        },1000)
-    }
+export function login(uname) {
+    return { type: 'login', uname }
+    // return (dispatch,getState) => {
+    //     dispatch({type:'requestLogin'});
+    //     setTimeout(() => {
+    //         if(Date.now() % 2 === 0){
+    //             dispatch({type:'loginSuccess'});
+    //         }else{
+    //             dispatch({type:'loginFailure'})
+    //         }
+    //     },1000)
+    // }
 }
